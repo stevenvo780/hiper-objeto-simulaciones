@@ -298,8 +298,8 @@ def evaluate_phase(phase_name, df, start_date, end_date, split_date, synthetic_m
     sensitivities = []
     for i in range(5):
         p = perturb_params(base_params, 0.1, seed=20 + i)
-    p["assimilation_series"] = None
-    p["assimilation_strength"] = 0.0
+        p["assimilation_series"] = None
+        p["assimilation_strength"] = 0.0
         s = simulate_abm(p, steps, seed=seeds["sensitivity"][i])
         sensitivities.append(mean(s["w"][val_start:]))
     sens_min = min(sensitivities)

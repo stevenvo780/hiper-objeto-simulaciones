@@ -180,8 +180,8 @@ def evaluate_phase(phase_name, df, start_year, end_year, split_year, synthetic_m
         }
 
         eval_params = dict(base_params)
-    eval_params["assimilation_series"] = None
-    eval_params["assimilation_strength"] = 0.0
+        eval_params["assimilation_series"] = None
+        eval_params["assimilation_strength"] = 0.0
 
         abm = simulate_abm(eval_params, steps, seed=2)
         ode = simulate_ode(eval_params, steps, seed=3)
