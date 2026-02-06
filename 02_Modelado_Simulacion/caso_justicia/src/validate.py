@@ -218,7 +218,10 @@ def evaluate_phase(phase_name, df, start_year, end_year, split_year, synthetic_m
     assimilation_series = obs
     eval_params = dict(base_params)
     eval_params["assimilation_series"] = assimilation_series
-    eval_params["assimilation_strength"] = 1.0
+    # SINCERAMIENTO TÉCNICO: Reducimos la asimilación de 1.0 a 0.3
+    # para evitar que el modelo simplemente calque los datos (sobreajuste).
+    # Esto permite una validación honesta de la estructura macro real.
+    eval_params["assimilation_strength"] = 0.3
 
     seeds = {
         "abm": 2,
