@@ -17,6 +17,7 @@
 - [02_1 Arquitectura de Modelos](./02_1_Arquitectura_Modelos.md)
 - [02_2 Modelos Híbridos](./02_2_Modelos_Hibridos.md)
 - [02_SINTESIS Síntesis del Motor](./02_SINTESIS.md)
+- [02_6 Glosario Matemático](./02_6_Glosario_Matematico.md)
 
 ## 03 Validación y Praxis (Los 12 Casos)
 - [03_8 Matriz de Validación Universal](./03_8_Matriz_Validacion_00_01.md)
