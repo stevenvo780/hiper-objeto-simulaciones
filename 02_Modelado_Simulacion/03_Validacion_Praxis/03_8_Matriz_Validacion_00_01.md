@@ -15,9 +15,10 @@ Esta matriz certifica la validez técnica de los casos. Se distingue entre **Val
 | **Bienestar** | Teórica (Encuestas) | 0.42 | 2.2 | ★★☆☆☆ | **TEÓRICO** |
 | **Estética** | Teórica (Estilos) | 0.33 | 2.1 | ★☆☆☆☆ | **TEÓRICO** |
 | **Paradigmas** | Teórica (Citas) | 0.31 | 2.1 | ★☆☆☆☆ | **TEÓRICO** |
-| **Movilidad** | Piloto (Local) | 0.32 | 2.1 | ★★☆☆☆ | **PROTOTIPO** |
+| **Movilidad** | Piloto (Local) | 0.32 | 2.1 | ★★☆☆☆ | **PROTOTIPO (Falla C1)** |
 
 ## Notas de Blindaje contra la "Pseudo-Ciencia"
 1. **LoE 4-5:** Casos con datasets históricos masivos. Son el núcleo de la tesis.
 2. **LoE 1-2:** Casos "Teóricos" o "Prospectivos". Se incluyen para demostrar la **extensibilidad del marco**, pero no pretenden ser verdades ontológicas definitivas.
-3. **Umbrales (EDI > 0.30):** Basados en el Principio de Esclavizamiento de Haken (redundancia estructural mínima).
+3. **Casos Prototipo:** Sistemas como Movilidad Urbana que, pese a tener un EDI > 0.30, fallan en la **Convergencia C1** en series temporales largas, indicando una inestabilidad del atractor macro.
+4. **Umbrales (EDI > 0.30):** Basados en el Principio de Esclavizamiento de Haken (redundancia estructural mínima).

@@ -30,3 +30,5 @@ class HybridModel:
             a.state += self.nudging * (target_state - a.state)
 ```
 Esta arquitectura garantiza que el hiperobjeto sea una entidad **detectable y falsable**.
+
+*Nota Técnica:* La clase `HybridModel` es la **formalización arquitectónica** del marco 00/01/02. En los experimentos empíricos (`caso_clima`, `caso_finanzas`), esta lógica se implementa mediante funciones optimizadas (`simulate_abm`, `simulate_ode`) para facilitar la paralelización y el manejo de grandes datasets.
