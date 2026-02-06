@@ -269,7 +269,7 @@ def evaluate_phase(phase_name, df, start_date, end_date, split_date, synthetic_m
     reduced_params = dict(eval_params)
     reduced_params["macro_coupling"] = 0.0
     reduced_params["forcing_scale"] = 0.0
-    reduced_params["assimilation_strength"] = 0.0
+    # assimilation_strength se mantiene igual al modelo completo (comparación justa)
     abm_reduced = simulate_abm(reduced_params, steps, seed=seeds["reduced"])
 
     obs_std = variance(obs_val) ** 0.5
