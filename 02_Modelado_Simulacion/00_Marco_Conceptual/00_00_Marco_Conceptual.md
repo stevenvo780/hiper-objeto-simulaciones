@@ -1,10 +1,10 @@
-# 00 Marco Conceptual: Ontología Operativa de Hiperobjetos
+# 00 Marco Conceptual: Ontología Operativa y Límites de H1
 
-## 1. Introducción: ¿Qué es un Hiperobjeto?
-Basado en la especificación original de **Morton (2013)**, un hiperobjeto es una entidad masivamente distribuida que desafía la percepción local. Complementamos esta visión con la "Vibrant Matter" de **Bennett (2010)** y el análisis de regímenes climáticos de **Latour (2017)**.
+## 1. El Rigor de la Tesis
+Este trabajo no busca una validación universal. Busca una **delimitación operativa**. 
 
-## 2. La Tesis Central (H1)
-Nuestra hipótesis propone que los hiperobjetos poseen **Eficacia Causal**, un concepto derivado de la "Causalidad Multinivel" de **Bunge (1979)** y los sistemas sociales de **Luhmann (1995)**. 
+## 2. Hipótesis Central (H1)
+La existencia de los hiperobjetos es una posibilidad científica que solo aceptamos si la evidencia es **incontestable**. Si el modelo híbrido no supera al modelo simple por un margen del 30% (EDI), o si el ajuste es tan perfecto que parece tautológico (EDI > 90%), rechazamos la validez ontológica del caso.
 
-## 3. Pilares de Validación (C1-C5)
-Este protocolo hereda el rigor del "Falsacionismo" de **Popper (1959)** y los "Programas de Investigación" de **Lakatos (1978)**, adaptándolos a la era de la simulación computacional.
+## 3. Honestidad Intelectual
+Aceptamos el fracaso de la hipótesis en sistemas de alta volatilidad (Finanzas, Postverdad). La ciencia progresa eliminando falsos positivos.

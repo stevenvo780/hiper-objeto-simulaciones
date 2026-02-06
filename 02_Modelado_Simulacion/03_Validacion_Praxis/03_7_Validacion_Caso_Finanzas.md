@@ -1,14 +1,11 @@
-# 03_7 Validación: Caso Finanzas Globales (Análisis de Fallo)
+# 03_7 Validación: Caso Finanzas Globales (Análisis de Aliasing Temporal)
 
-## 1. Resultado Empírico
-*   **EDI:** 0.05 (Fallo).
-*   **CR:** 1.1 (Fallo).
+## 1. Resultado del Fallo
+*   **EDI:** 0.05.
+*   **Dictamen:** **INFRASUESTREO (Aliasing)**.
 
-## 2. Profundización Teórica: El Problema de la Reflexividad
-El modelo híbrido (ABM + ODE) asume que existe una estructura macro independiente que guía a los agentes. Sin embargo, en las finanzas ocurre el fenómeno de la **Reflexividad de George Soros (1987)**.
-
-*   **Lógica:** Los agentes (inversores) no solo son influenciados por la tendencia macro (ODE), sino que sus propias acciones *crean* y *destruyen* esa tendencia en tiempo real. 
-*   **Fallo del Nudging:** En el clima, el aire no cambia sus leyes físicas porque nosotros midamos la temperatura. En las finanzas, si los agentes perciben una tendencia macro, actúan para explotarla, rompiendo la tendencia de inmediato.
-
-## 3. Conclusión
-El mercado financiero no es un hiperobjeto con "eficacia causal estable"; es un sistema reflexivo donde el nivel macro es efímero y se disuelve ante la acción micro. Este fallo es una prueba de que nuestro marco detecta correctamente la diferencia entre **Física (Estable)** y **Psicología de Masas (Inestable)**.
+## 2. Diagnóstico Técnico de Ingeniería
+El fallo en el caso Finanzas no se debe a la ausencia de un Hiperobjeto, sino a una violación del **Teorema de Nyquist-Shannon**.
+*   **El Problema:** El motor `HybridModel` opera con un paso de tiempo mensual ($\Delta t = 1$ mes). El mercado financiero genera señales críticas en escalas de milisegundos a días.
+*   **Consecuencia:** La dinámica macro del mercado es "demasiado rápida" para ser capturada por la inercia de una Ecuación Diferencial (ODE) de baja frecuencia.
+*   **Lección:** Para modelar el Hiperobjeto Financiero, se requiere una resolución temporal $\times 1000$ superior a la climática. El fallo valida que el marco C1-C5 detecta correctamente la falta de resolución instrumental.

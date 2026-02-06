@@ -1,14 +1,10 @@
-# 02_4 Dialéctica del Modelado: Debugging Comparativo
+# 02_4 Dialéctica del Modelado: El Juicio de la Parsimonia
 
-En esta tesis, no nos conformamos con un solo modelo. Usamos la **Dialéctica**, que es básicamente poner a pelear a dos modelos para ver cuál es más robusto.
+La dialéctica es el proceso de poner a competir el modelo complejo (Híbrido) contra el modelo sencillo (Reducido).
 
-## 1. El Modelo A (Tesis) vs Modelo B (Antítesis)
-*   **Modelo A (Completo):** Usa todo el poder del sistema híbrido (Macro + Micro).
-*   **Modelo B (Reducido):** Intenta explicar lo mismo solo con el nivel Micro (sin el "cerebro global").
+## 1. La Navaja de Ockham
+Si el modelo simple (Micro) explica los datos igual de bien que el modelo complejo, **elegimos el simple**. 
+*   En el caso **Finanzas**, el modelo simple ganó. Esto significa que la "Capa Macro" que intentamos imponer era una ficción del investigador.
 
-## 2. El Proceso de Debugging
-Si el Modelo B (el simple) explica los datos igual de bien que el Modelo A, entonces nuestro Modelo A tiene **sobreingeniería**. 
-*   **La Síntesis:** Solo aceptamos la complejidad del Modelo A si demuestra que sin ella perdemos precisión real. A esto lo llamamos "probar la emergencia".
-
-## 3. Conclusión Lógica
-Este proceso asegura que no estamos "inventando" estructuras macro si los datos se pueden explicar de forma más sencilla.
+## 2. El fracaso como descubrimiento
+Cuando el modelo híbrido falla, estamos descubriendo los límites del Hiperobjeto. No todos los sistemas masivamente distribuidos tienen una estructura macro operativa. La dialéctica nos protege de inventar realidades donde solo hay azar.

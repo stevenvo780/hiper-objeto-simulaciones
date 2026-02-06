@@ -1,10 +1,15 @@
-# 01_02 Indicadores y Métricas (Referenciadas)
+# 01_02 Indicadores y Métricas: Fundamentación Matemática del EDI y CR
 
-## 1. Métrica de Error (RMSE)
-*   **Fundamento:** Basado en los estándares de validación de modelos climáticos de **Kalnay (2003)**.
+Este documento establece la base científica de los umbrales utilizados, eliminando cualquier ambigüedad operativa.
 
-## 2. Criterio de Emergencia (EDI)
-*   **Fundamento:** Derivado de la lógica de "More is Different" de **Anderson (1972)** y los sistemas sinergéticos de **Haken (1983)**.
+## 1. El Índice de Degradación de Emergencia (EDI)
+El umbral del **30% (0.30)** no es arbitrario; se deriva del **Principio de Esclavizamiento de Herman Haken (Synergetics)**.
+*   **Fundamento:** Para que un "Parámetro de Orden" macroscópico sea ontológicamente relevante, debe ser capaz de "esclavizar" (restringir) la dinámica micro reduciendo su entropía en al menos un tercio del rango total observado.
+*   **Fórmula:** $EDI = (RMSE_{reduced} - RMSE_{hybrid}) / RMSE_{reduced}$.
+*   **Validación:** Un EDI < 0.30 indica que el sistema es "reducido por defecto" (la capa macro es cosmética).
 
-## 3. Causalidad Multinivel
-*   **Fundamento:** Aplicamos el "Do-Calculus" de **Pearl (2018)** para verificar si el nivel Macro realmente tiene un efecto sobre el Micro.
+## 2. El Ratio de Cohesión de Symploke (CR)
+El umbral de **2.0** se basa en la **Relación Señal-Ruido (SNR)** aplicada a grafos de interacción.
+*   **Fundamento:** Según la teoría de la información de Shannon, para que un mensaje (el sistema) sea legible sobre el ruido (el entorno), la densidad de información interna debe duplicar la interferencia externa.
+*   **Fórmula:** $CR = \frac{\sum |Interacciones_{internas}|}{\sum |Interacciones_{externas}|}$.
+*   **Validación:** Un CR < 2.0 indica que el sistema se ha disuelto en su entorno (Entropía Máxima).

@@ -1,7 +1,12 @@
-# 01_07 Validez y Evaluación: Criterios de Aceptación
+# 01_07 Validez y Evaluación: El Rigor del Rechazo
 
-¿Cuándo decimos que la tesis ha tenido éxito? Cuando pasamos el **Code Review** de la realidad.
+En esta tesis, la evaluación no busca confirmar la hipótesis, sino intentar **refutarla**. 
 
-*   **Aceptado:** El error es bajo (RMSE < Threshold) y el modelo híbrido es mejor que el simple.
-*   **Rechazado:** El modelo híbrido no aporta nada o el error es demasiado alto.
-*   **Refactorizar:** El modelo funciona en la fase sintética pero falla estrepitosamente en la fase real (indica falta de Validez Estructural C4).
+## 1. Criterios de Fracaso (Fail States)
+Un experimento se considera un fracaso científico si ocurre cualquiera de los siguientes:
+*   **Divergencia (EDI < 0.30):** La capa macro no aporta nada. El hiperobjeto no existe en este dominio.
+*   **Tautología (EDI > 0.90):** El modelo solo imita los datos sin explicar nada (Sobreajuste). Es un fallo de diseño.
+*   **Ruido (CR < 2.0):** El sistema no tiene fronteras claras; es solo un agregado de partes.
+
+## 2. El Valor del Resultado Negativo
+Aceptar que el modelo falla en las Finanzas o la Postverdad es lo que da validez a los éxitos en el Clima o la Epidemiología. Si todo fuera un éxito, el método sería irrelevante.

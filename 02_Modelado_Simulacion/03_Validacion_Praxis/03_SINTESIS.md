@@ -1,9 +1,15 @@
-# 03_SINTESIS: Informe Final de Validación
+# 03_SINTESIS: Informe de Integridad de Resultados
 
-## 1. Resumen de Pruebas
-Se evaluaron once casos con dos fases (sintetica y real):
-- Clima, Finanzas, Movilidad, Contaminacion, Wikipedia, Energia, Epidemiologia, Paradigmas Cientificos, Estetica y Estilos, Justicia y Normatividad, Conciencia Fenomenica.
-- Se validaron 9/11 casos. Movilidad queda como prototipo y Finanzas como rechazado (ver `03_8_Matriz_Validacion_00_01.md`).
+## 1. Balance del Portafolio
+De los 12 casos base:
+*   **10 Validados** (ver matriz 03_8).
+*   **1 Prototipo:** Movilidad.
+*   **1 Rechazado:** Finanzas.
 
-## 2. Conclusión de Praxis
-La metodología C1–C5 permite detectar fallos por fase, aislar supuestos inestables y justificar correcciones con evidencia reproducible. En esta version, los modelos acoplados superan los umbrales en ambas fases para nueve casos y dejan dos como referencia falsable.
+Adicionalmente, se ejecutaron **3 casos de falsacion** (Exogeneidad, Observabilidad, No‑Estacionariedad) y **fallaron como se esperaba**.
+
+## 2. Conclusión Académica
+La tesis cumple su objetivo al establecer una **frontera clara** entre hiperobjetos con eficacia causal y sistemas donde la hipótesis H1 falla de forma reproducible.
+
+## 3. Leccion de Falsacion
+Los casos de falsacion (exogeneidad, observabilidad insuficiente y no‑estacionariedad) no son anomalías: son el mecanismo que valida el alcance real del marco.

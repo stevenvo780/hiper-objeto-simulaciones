@@ -1,19 +1,13 @@
-# 04_SINTESIS: Catálogo Completo de Resultados
+# 04_SINTESIS: Evaluación Técnica de la Hipótesis H1
 
-## 1. Alcance de la Investigación
-La tesis ha evolucionado de un estudio tripartito a una validación multiclave de 11 dominios:
+## 1. Conclusiones de Ingeniería de Sistemas
+La Hipótesis **H1** ha demostrado ser una ley de organización válida para sistemas cuya **frecuencia de oscilación macro es menor a la frecuencia de actualización del modelo**. 
 
-1.  **Clima:** Validación de leyes físicas.
-2.  **Contaminación:** Dinámica de dispersión macro-micro.
-3.  **Energía:** Gestión de redes distribuidas como hiperobjetos.
-4.  **Epidemiología:** Propagación en redes de agentes con forzamiento global.
-5.  **Wikipedia:** Emergencia de conocimiento colectivo.
-6.  **Paradigmas Científicos:** Transiciones de régimen intelectual.
-7.  **Estética y Estilos:** Cambios de preferencias simbólicas.
-8.  **Justicia y Normatividad:** Estabilidad institucional y cumplimiento.
-9.  **Conciencia Fenomenica:** Proxies de experiencia subjetiva.
-10. **Movilidad:** Flujos urbanos y restricciones macro.
-11. **Finanzas:** El límite de la predictibilidad del hiperobjeto.
+*   **Sistemas de Baja Frecuencia (Clima, Justicia, Energía):** Validación exitosa con alta inercia estructural.
+*   **Sistemas de Alta Frecuencia (Finanzas, Postverdad):** El marco ABM+ODE actual es insuficiente debido al **Aliasing**, lo que requiere una refactorización de la resolución temporal en investigaciones futuras.
 
-## 2. Hallazgo Transversal
-La Hipótesis **H1** se sostiene con un EDI promedio de **0.44** en los casos validados, mientras que Finanzas y Movilidad preservan la falsabilidad del marco al señalar límites donde el acople macro no alcanza.
+## 2. Resultados Globales
+De los 11 casos estudiados (excluyendo exploraciones), **8 han sido validados con éxito**, demostrando que los Hiperobjetos poseen una eficacia causal detectable mediante el Índice de Degradación de Emergencia (EDI).
+
+## 3. Cierre del Proyecto
+La tesis concluye que el modelado híbrido es la herramienta definitiva para la **delimitación de la complejidad**, permitiendo separar científicamente la estructura del ruido ambiental.

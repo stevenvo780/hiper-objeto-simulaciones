@@ -24,4 +24,14 @@ La biblioteca de experimentos reales de la tesis.
 20. **[04_21_Caso_Justicia_Normatividad.md](./04_21_Caso_Justicia_Normatividad.md)**: Caso Justicia y Normatividad.
 21. **[04_22_Caso_Conciencia_Fenomenica.md](./04_22_Caso_Conciencia_Fenomenica.md)**: Caso Conciencia Fenomenica.
 22. **[04_23_Caso_Postverdad_Redes.md](./04_23_Caso_Postverdad_Redes.md)**: Caso Postverdad en Redes.
-23. **[04_SINTESIS.md](./04_SINTESIS.md)**: Conclusiones comparativas.
+23. **[04_24_Falsacion_Protocolo.md](./04_24_Falsacion_Protocolo.md)**: Protocolo de falsación.
+24. **[04_25_Caso_Falsacion_Exogeneidad.md](./04_25_Caso_Falsacion_Exogeneidad.md)**: Falsación Exogeneidad.
+25. **[04_26_Caso_Falsacion_Observabilidad.md](./04_26_Caso_Falsacion_Observabilidad.md)**: Falsación Observabilidad.
+26. **[04_27_Caso_Falsacion_No_Estacionariedad.md](./04_27_Caso_Falsacion_No_Estacionariedad.md)**: Falsación No‑Estacionariedad.
+27. **[04_28_Plan_Adversarial_Moderacion.md](./04_28_Plan_Adversarial_Moderacion.md)**: Plan Moderación Adversarial.
+28. **[04_29_Plan_RTB_Publicidad.md](./04_29_Plan_RTB_Publicidad.md)**: Plan RTB Publicidad.
+29. **[04_30_Plan_Politicas_Estrategicas.md](./04_30_Plan_Politicas_Estrategicas.md)**: Plan Políticas Estratégicas.
+30. **[04_31_Caso_Moderacion_Adversarial.md](./04_31_Caso_Moderacion_Adversarial.md)**: Caso Moderación Adversarial.
+31. **[04_32_Caso_RTB_Publicidad.md](./04_32_Caso_RTB_Publicidad.md)**: Caso RTB Publicidad.
+32. **[04_33_Caso_Politicas_Estrategicas.md](./04_33_Caso_Politicas_Estrategicas.md)**: Caso Políticas Estratégicas.
+33. **[04_SINTESIS.md](./04_SINTESIS.md)**: Conclusiones comparativas.
