@@ -37,7 +37,7 @@ def make_synthetic(start_date, end_date, seed=101):
 
     forcing = [0.01 * t for t in range(steps)]
     true_params = {
-        "p0": 0.0, "ode_alpha": 0.08, "ode_beta": 0.03,
+        "p0": 0.0, "x0": 0.0, "ode_alpha": 0.08, "ode_beta": 0.03,
         "ode_noise": 0.02, "forcing_series": forcing,
         "p0_ode": 0.0,
     }

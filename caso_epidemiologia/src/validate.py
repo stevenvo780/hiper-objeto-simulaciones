@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "common")
 
 from abm import simulate_abm
 from data import fetch_owid_world_weekly
-from ode import simulate_ode
+from ode import simulate_seir as simulate_ode
 from hybrid_validator import CaseConfig, run_full_validation, write_outputs
 
 
@@ -37,12 +37,11 @@ def make_synthetic(start_date, end_date, seed=101):
 
     forcing = [0.01 * t for t in range(steps)]
     true_params = {
-        "p0": 0.0, "ode_alpha": 0.08, "ode_beta": 0.03,
-        "ode_noise": 0.02, "forcing_series": forcing,
-        "p0_ode": 0.0,
+        "beta": 0.3, "sigma": 0.2, "gamma": 0.1, "noise": 0.02,
+        "forcing_series": forcing, "s0": 0.999, "e0": 0.001,
     }
     sim = simulate_ode(true_params, steps, seed=seed + 1)
-    ode_key = [k for k in sim if k not in ("forcing",)][0]
+    ode_key = "incidence"
     obs = np.array(sim[ode_key]) + rng.normal(0.0, 0.05, size=steps)
 
     df = pd.DataFrame({"date": dates, "value": obs})
@@ -64,7 +63,7 @@ def main():
         real_end="2023-12-31",
         real_split="2022-01-01",
         corr_threshold=0.7,
-        extra_base_params={"beta": 0.3, "sigma": 0.2, "gamma": 0.1},
+        extra_base_params={"beta": 0.3, "sigma": 0.2, "gamma": 0.1, "e0": 0.001, "noise": 0.02},
     )
 
     results = run_full_validation(

@@ -20,8 +20,8 @@ from hybrid_validator import CaseConfig, run_full_validation, write_outputs
 
 def load_real_data(start_date, end_date):
 
-    cache_path = os.path.join(os.path.dirname(__file__), "..", "data", "moma_share.csv")
-    df = fetch_moma_share(int(start_date[:4]), int(end_date[:4]), cache_path=os.path.abspath(cache_path))
+    cache_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "moma_share.csv"))
+    df, _ = fetch_moma_share(cache_path, start_year=int(start_date[:4]), end_year=int(end_date[:4]))
     df = df.rename(columns={"share": "value"})
     df["date"] = pd.to_datetime(df["date"])
     return df.dropna(subset=["date", "value"])

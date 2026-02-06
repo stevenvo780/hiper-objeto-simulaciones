@@ -29,7 +29,7 @@ def load_real_data(start_date, end_date):
 
 def make_synthetic(start_date, end_date, seed=101):
     rng = np.random.default_rng(seed)
-    dates = pd.date_range(start=start_date, end=end_date, freq="D")
+    dates = pd.date_range(start=start_date, end=end_date, freq="MS")
     steps = len(dates)
     if steps < 5:
         dates = pd.date_range(start=start_date, end=end_date, freq="YS")
@@ -55,14 +55,14 @@ def main():
         case_name="Falsación: Exogeneidad",
         value_col="value",
         series_key="incidence",
-        grid_size=20,
-        persistence_window=14,
-        synthetic_start="2018-01-01",
-        synthetic_end="2024-12-31",
-        synthetic_split="2021-01-01",
-        real_start="2018-01-01",
-        real_end="2024-12-31",
-        real_split="2021-01-01",
+        grid_size=10,
+        persistence_window=6,
+        synthetic_start="2020-01-01",
+        synthetic_end="2024-01-01",
+        synthetic_split="2022-01-01",
+        real_start="2020-01-01",
+        real_end="2024-01-01",
+        real_split="2022-01-01",
         corr_threshold=0.7,
         extra_base_params={},
     )
