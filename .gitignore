@@ -3,3 +3,6 @@ __pycache__/
 **/outputs/
 02_Modelado_Simulacion/caso_energia/data/opsd_time_series.csv
 02_Modelado_Simulacion/caso_epidemiologia/data/owid_covid.csv
+
+# Ignore large data files
+02_Modelado_Simulacion/caso_*/data/*.csv
