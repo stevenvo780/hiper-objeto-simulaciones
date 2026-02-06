@@ -3,16 +3,16 @@
 ## Objetivo
 - Probar limites del marco en dominios simbolicos y de gusto.
 
-## Fuente de datos reales (pendiente)
-- Proponer fuentes: catalogos de museos, series de estilos, metadatos de obras.
+## Fuente de datos reales
+- MoMA Collection (Artworks.csv, clasificacion de obras).
 
 ## Metodologia
 - Modelos no isomorfos: ABM (agentes con preferencias) + macro (transiciones estilisticas).
 - Variable puente: densidad estilistica o indice de cambio.
 - Criterios C1–C5 y reglas de indicadores.
 
-## Fases y splits (pendiente)
-- Definir periodos segun fuente.
+## Fases y splits
+- Fase real: 1929-2023, split 1970.
 
 ## Entregables
 - Reporte reproducible y metricas.

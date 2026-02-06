@@ -3,16 +3,16 @@
 ## Objetivo
 - Explorar limite epistemico del marco: fenomenologia sin observables directos.
 
-## Fuente de datos reales (pendiente)
-- Proponer fuentes: encuestas de experiencia, proxies psicofisicos.
+## Fuente de datos reales
+- Our World in Data (Cantril ladder, promedio anual).
 
 ## Metodologia
 - Modelos no isomorfos: ABM (agentes con estados internos) + macro (dinamica agregada).
 - Variable puente: proxy observable (no experiencia directa).
 - Criterios C1–C5 y reglas de indicadores.
 
-## Fases y splits (pendiente)
-- Definir periodos segun fuente.
+## Fases y splits
+- Fase real: 2011-2023, split 2018.
 
 ## Entregables
 - Reporte reproducible y metricas.

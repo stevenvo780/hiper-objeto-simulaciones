@@ -19,4 +19,9 @@ La biblioteca de experimentos reales de la tesis.
 15. **[04_16_Plan_Justicia_Normatividad.md](./04_16_Plan_Justicia_Normatividad.md)**: Plan Justicia y Normatividad.
 16. **[04_17_Plan_Conciencia_Phenomenica.md](./04_17_Plan_Conciencia_Phenomenica.md)**: Plan Conciencia Fenomenica.
 17. **[04_18_Plan_Postverdad_Redes.md](./04_18_Plan_Postverdad_Redes.md)**: Plan Postverdad en Redes.
-18. **[04_SINTESIS.md](./04_SINTESIS.md)**: Conclusiones comparativas.
+18. **[04_19_Caso_Paradigmas_Cientificos.md](./04_19_Caso_Paradigmas_Cientificos.md)**: Caso Paradigmas Cientificos.
+19. **[04_20_Caso_Estetica_Estilos.md](./04_20_Caso_Estetica_Estilos.md)**: Caso Estetica y Estilos.
+20. **[04_21_Caso_Justicia_Normatividad.md](./04_21_Caso_Justicia_Normatividad.md)**: Caso Justicia y Normatividad.
+21. **[04_22_Caso_Conciencia_Fenomenica.md](./04_22_Caso_Conciencia_Fenomenica.md)**: Caso Conciencia Fenomenica.
+22. **[04_23_Caso_Postverdad_Redes.md](./04_23_Caso_Postverdad_Redes.md)**: Caso Postverdad en Redes.
+23. **[04_SINTESIS.md](./04_SINTESIS.md)**: Conclusiones comparativas.

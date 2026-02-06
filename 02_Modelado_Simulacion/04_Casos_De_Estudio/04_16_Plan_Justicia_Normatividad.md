@@ -3,16 +3,16 @@
 ## Objetivo
 - Evaluar el marco en sistemas normativos con retroalimentacion institucional.
 
-## Fuente de datos reales (pendiente)
-- Proponer fuentes: series de decisiones judiciales, cambios normativos, tasas de cumplimiento.
+## Fuente de datos reales
+- World Bank WGI (Rule of Law, RL.EST) para USA.
 
 ## Metodologia
 - Modelos no isomorfos: ABM (actores con reglas) + macro (dinamica institucional).
 - Variable puente: nivel de cumplimiento / estabilidad normativa.
 - Criterios C1–C5 y reglas de indicadores.
 
-## Fases y splits (pendiente)
-- Definir periodos segun fuente.
+## Fases y splits
+- Fase real: 1996-2023, split 2010.
 
 ## Entregables
 - Reporte reproducible y metricas.

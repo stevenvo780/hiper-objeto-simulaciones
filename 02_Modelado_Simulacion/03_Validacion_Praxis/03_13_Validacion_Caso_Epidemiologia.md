@@ -1,9 +1,5 @@
-# 03_13 Validación: Caso Difusión Epidemiológica
+# 03_13 Validación: Caso Epidemiología (Referenciado)
 
-## Métricas Críticas
-*   **EDI (Emergencia):** 0.55.
-*   **CR (Cohesión):** 3.2.
-*   **Estado:** **VALIDADO**.
-
-## Análisis
-Es el caso con mayor cohesión (CR=3.2). La estructura de la red social (Macro) dicta casi por completo la probabilidad de infección de cada agente (Micro). Se demuestra la eficacia causal descendente de las políticas de salud pública sobre la salud individual.
+*   **Teoría Base:** Dinámica de redes de **Strogatz (2003)**.
+*   **EDI:** 0.55.
+*   **Análisis:** Se confirma la emergencia del hiperobjeto viral. Siguiendo a **Maturana (1980)**, el sistema muestra una autopoiesis estructural: el virus sobrevive como entidad macro a pesar de la muerte de agentes individuales.
