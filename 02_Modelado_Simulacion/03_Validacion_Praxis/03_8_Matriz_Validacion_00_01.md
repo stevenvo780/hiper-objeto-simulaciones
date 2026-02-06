@@ -4,7 +4,7 @@ Esta matriz certifica la validez técnica de los casos. Se distingue entre **Val
 
 | Caso de Estudio | Tipo de Validación | EDI | CR | Nivel de Evidencia (LoE) | Estado Final |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Clima Regional** | Empírica (Meteostat) | 0.45 | 2.5 | ★★★★★ | **VALIDADO** |
+| **Clima Regional** | Empírica (Meteostat) | 0.51 | 2.5 | ★★★★★ | **VALIDADO** |
 | **Contaminación** | Empírica (CAMS) | 0.52 | 2.8 | ★★★★☆ | **VALIDADO** |
 | **Energía** | Empírica (OPSD) | 0.38 | 2.4 | ★★★★☆ | **VALIDADO** |
 | **Epidemiología** | Empírica (OWID) | 0.55 | 3.2 | ★★★★☆ | **VALIDADO** |

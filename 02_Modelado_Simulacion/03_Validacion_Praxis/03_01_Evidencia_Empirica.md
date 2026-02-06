@@ -4,7 +4,7 @@ En este documento se analizan los casos donde el marco ABM+ODE demostró una con
 
 ## 1. El Caso Clima (El Hiperobjeto Canónico)
 *   **Dataset:** Meteostat / CAMS (>30 años).
-*   **Resultado:** EDI 0.45 | CR 2.5.
+*   **Resultado:** EDI 0.51 | CR 2.5.
 *   **Análisis:** El éxito del clima valida que los sistemas con alta inercia térmica poseen una estructura macro (Ecuación Energética) que "esclaviza" de forma detectable a las fluctuaciones locales (Micro-clima). Es la prueba de que el Hiperobjeto tiene eficacia causal.
 
 ## 2. El Caso Energía (Infraestructura Crítica)
