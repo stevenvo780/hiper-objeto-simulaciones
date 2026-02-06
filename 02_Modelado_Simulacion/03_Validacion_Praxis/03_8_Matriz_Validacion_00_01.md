@@ -1,23 +1,23 @@
 # 03_8 Matriz de Validación Técnica: Verificación de Hiperobjetos
 
-Esta matriz certifica la validez ontológica de los casos basándose en la **Sinergética de Haken (EDI)** y la **Relación Señal-Ruido de Shannon (CR)**.
+Esta matriz certifica la validez técnica de los casos. Se distingue entre **Validación Empírica** (datos duros de >20 años) y **Validación Prospectiva** (basada en proxies o series cortas).
 
-| Caso de Estudio | Fundamento Teórico | EDI (Emergencia) | CR (Symploke) | Estado Final |
-| :--- | :--- | :--- | :--- | :--- |
-| **Clima Regional** | Termodinámica No Lineal | 0.45 | 2.5 | **VALIDADO** |
-| **Contaminación** | Dinámica de Fluidos | 0.52 | 2.8 | **VALIDADO** |
-| **Epidemiología** | Topología de Redes | 0.55 | 3.2 | **VALIDADO** |
-| **Wikipedia** | Inteligencia Colectiva | 0.41 | 2.6 | **VALIDADO** |
-| **Energía** | Estabilidad de Cargas | 0.38 | 2.4 | **VALIDADO** |
-| **Justicia (Invarianza)** | Estática Normativa | 0.35 | 2.3 | **VALIDADO** |
-| **Bienestar (Sincro)** | Coherencia Conductual | 0.42 | 2.2 | **VALIDADO** |
-| **Paradigmas (Cient.)** | Estructura de Kuhn | 0.31 | 2.1 | **VALIDADO** |
-| **Estética y Estilos** | Dinámica Curatorial | 0.33 | 2.1 | **VALIDADO** |
-| **Postverdad** | Dinámica de Redes | 0.34 | 2.2 | **VALIDADO** |
-| **Movilidad Urbana** | Micromotivos | 0.32 | 2.1 | **PROTOTIPO** |
-| **Finanzas (SPY)** | Eficiencia de Mercado | 0.05 | 1.1 | **RECHAZADO (Aliasing)** |
+| Caso de Estudio | Tipo de Validación | EDI | CR | Nivel de Evidencia (LoE) | Estado Final |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Clima Regional** | Empírica (Meteostat) | 0.45 | 2.5 | ★★★★★ | **VALIDADO** |
+| **Contaminación** | Empírica (CAMS) | 0.52 | 2.8 | ★★★★☆ | **VALIDADO** |
+| **Energía** | Empírica (OPSD) | 0.38 | 2.4 | ★★★★☆ | **VALIDADO** |
+| **Epidemiología** | Empírica (OWID) | 0.55 | 3.2 | ★★★★☆ | **VALIDADO** |
+| **Finanzas (SPY)** | Empírica (Yahoo) | 0.05 | 1.1 | ★★★★★ | **RECHAZADO** |
+| **Wikipedia** | Empírica (Wikimedia) | 0.41 | 2.6 | ★★★☆☆ | **VALIDADO** |
+| **Postverdad** | Prospectiva (Proxies) | 0.34 | 2.2 | ★★☆☆☆ | **VALIDADO** |
+| **Justicia** | Teórica (Invarianza) | 0.35 | 2.3 | ★★☆☆☆ | **TEÓRICO** |
+| **Bienestar** | Teórica (Encuestas) | 0.42 | 2.2 | ★★☆☆☆ | **TEÓRICO** |
+| **Estética** | Teórica (Estilos) | 0.33 | 2.1 | ★☆☆☆☆ | **TEÓRICO** |
+| **Paradigmas** | Teórica (Citas) | 0.31 | 2.1 | ★☆☆☆☆ | **TEÓRICO** |
+| **Movilidad** | Piloto (Local) | 0.32 | 2.1 | ★★☆☆☆ | **PROTOTIPO** |
 
-## Notas Técnicas de Blindaje
-1. **EDI > 0.30:** Requisito de reducción de entropía del 33% para declarar emergencia real.
-2. **CR >= 2.0:** Requisito de potencia de señal sistémica (SNR) para declarar frontera del hiperobjeto.
-3. **Fallo de Finanzas:** Se identifica como una limitación de frecuencia de muestreo, no como una invalidez conceptual de H1.
+## Notas de Blindaje contra la "Pseudo-Ciencia"
+1. **LoE 4-5:** Casos con datasets históricos masivos. Son el núcleo de la tesis.
+2. **LoE 1-2:** Casos "Teóricos" o "Prospectivos". Se incluyen para demostrar la **extensibilidad del marco**, pero no pretenden ser verdades ontológicas definitivas.
+3. **Umbrales (EDI > 0.30):** Basados en el Principio de Esclavizamiento de Haken (redundancia estructural mínima).

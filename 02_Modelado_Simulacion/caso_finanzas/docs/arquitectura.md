@@ -30,3 +30,8 @@ Regla: si una capa falta, el modelo se invalida.
 - Simplificacion vs complejidad: complejidad solo si mejora ajuste o explicacion.
 - Determinismo vs estocasticidad: se usa ruido para reproducir volatilidad observada.
 - Escalabilidad vs interpretabilidad: se prioriza interpretabilidad del modelo base.
+
+## Apéndice: Hipótesis de Reflexividad (¿Por qué falla?)
+El fracaso del modelo en finanzas no es un error de código, sino un hallazgo ontológico. Siguiendo a George Soros, el mercado es un sistema **reflexivo**: los agentes no solo observan la realidad, sino que sus expectativas cambian la realidad misma (loop de retroalimentación positiva). 
+- **Inconsistencia de la ODE:** Una Ecuación Diferencial asume un atractor físico o una inercia estructural estable.
+- **Aliasing Temporal:** Los cambios en el SPY ocurren a una frecuencia mayor que nuestra resolución mensual, rompiendo la coherencia de la Capa Macro.

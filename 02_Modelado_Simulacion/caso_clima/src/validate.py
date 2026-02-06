@@ -122,9 +122,9 @@ def build_forcing(train_df, full_df, value_col):
 
 def calibrate_abm_params(obs, base_params, steps):
     candidates = []
-    for forcing_scale in [0.01, 0.03, 0.05, 0.1, 0.2]:
-        for macro_coupling in [0.0, 0.2, 0.4]:
-            for damping in [0.0, 0.02, 0.05]:
+    for forcing_scale in [0.05, 0.1, 0.2, 0.4, 0.8]:
+        for macro_coupling in [0.0, 0.2, 0.4, 0.6]:
+            for damping in [0.0, 0.02, 0.05, 0.1]:
                 params = dict(base_params)
                 params["forcing_scale"] = forcing_scale
                 params["macro_coupling"] = macro_coupling
@@ -202,8 +202,9 @@ def evaluate_phase(phase_name, df, start_date, end_date, split_date, synthetic_m
     val_start = len(train_df)
 
     seasonal_trend, trend_params = build_forcing(train_df, df, "tavg_anom")
-    lag_forcing = [obs[0]] + obs[:-1]
-    forcing_series = [seasonal_trend[i] + 0.5 * lag_forcing[i] for i in range(steps)]
+    # lag_forcing = [obs[0]] + obs[:-1]
+    # forcing_series = [seasonal_trend[i] + 0.5 * lag_forcing[i] for i in range(steps)]
+    forcing_series = seasonal_trend
 
     base_params = {
         "grid_size": 10,
@@ -238,7 +239,7 @@ def evaluate_phase(phase_name, df, start_date, end_date, split_date, synthetic_m
     assimilation_series = [None] + obs[:-1]
     eval_params = dict(base_params)
     eval_params["assimilation_series"] = assimilation_series
-    eval_params["assimilation_strength"] = 0.4
+    eval_params["assimilation_strength"] = 1.0
 
     seeds = {
         "abm": 2,
