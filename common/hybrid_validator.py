@@ -257,8 +257,7 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
                    param_grid=None, seed=2, n_refine=2000):
     """
     Grid search masivo + refinamiento local ultra-intensivo.
-    Default: 3600+ combinaciones + 2000 iteraciones de refinamiento.
-    Diseñado para ejecución en torre de 32 cores.
+    Default: 3135+ combinaciones + 2000 iteraciones de refinamiento.
     """
     if param_grid is None:
         param_grid = {
@@ -271,6 +270,9 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
                         0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
         }
 
+    obs_arr = np.asarray(obs_train, dtype=np.float64)
+    n_obs = len(obs_train)
+
     candidates = []
     for fs in param_grid["forcing_scale"]:
         for mc in param_grid["macro_coupling"]:
@@ -281,10 +283,11 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
                 params["damping"] = dmp
                 params["assimilation_strength"] = 0.0
                 params["assimilation_series"] = None
-                params["_store_grid"] = False  # No almacenar grid en calibración
+                params["_store_grid"] = False
                 sim = simulate_abm_fn(params, steps, seed=seed)
                 key = _get_series_key(sim)
-                err = rmse(sim[key][:len(obs_train)], obs_train)
+                pred = np.asarray(sim[key][:n_obs], dtype=np.float64)
+                err = float(np.sqrt(np.mean((pred - obs_arr) ** 2)))
                 candidates.append((err, fs, mc, dmp))
                 del sim
 
@@ -305,10 +308,11 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
         params.update(candidate)
         params["assimilation_strength"] = 0.0
         params["assimilation_series"] = None
-        params["_store_grid"] = False  # No almacenar grid en refinamiento
+        params["_store_grid"] = False
         sim = simulate_abm_fn(params, steps, seed=seed)
         key = _get_series_key(sim)
-        err = rmse(sim[key][:len(obs_train)], obs_train)
+        pred = np.asarray(sim[key][:n_obs], dtype=np.float64)
+        err = float(np.sqrt(np.mean((pred - obs_arr) ** 2)))
         del sim
         if err < best_err:
             best_params = candidate
