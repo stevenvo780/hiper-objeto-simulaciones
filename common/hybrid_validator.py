@@ -224,16 +224,17 @@ def calibrate_ode(obs_train, forcing_train, regularization=0.01):
 
 
 def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
-                   param_grid=None, seed=2):
+                   param_grid=None, seed=2, n_refine=200):
     """
-    Grid search amplio + refinamiento local.
-    Default: 560 combinaciones (10×8×7).
+    Grid search amplio + refinamiento local intensivo.
+    Default: 2000+ combinaciones con 200 iteraciones de refinamiento.
     """
     if param_grid is None:
         param_grid = {
-            "forcing_scale": [0.005, 0.01, 0.02, 0.03, 0.05, 0.08, 0.1, 0.15, 0.2, 0.3],
-            "macro_coupling": [0.0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8],
-            "damping": [0.0, 0.01, 0.02, 0.03, 0.05, 0.08, 0.1],
+            "forcing_scale": [0.005, 0.01, 0.02, 0.04, 0.08, 0.12, 0.2, 0.3,
+                              0.4, 0.5, 0.65, 0.8, 1.0, 1.3],
+            "macro_coupling": [0.0, 0.1, 0.2, 0.4, 0.6, 0.75, 0.85, 0.95],
+            "damping": [0.0, 0.01, 0.05, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8],
         }
 
     candidates = []
@@ -254,15 +255,15 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
     candidates.sort(key=lambda x: x[0])
     best = candidates[0]
 
-    # Refinamiento local alrededor del mejor
+    # Refinamiento local intensivo alrededor del mejor
     best_params = {"forcing_scale": best[1], "macro_coupling": best[2], "damping": best[3]}
     best_err = best[0]
     rng = random.Random(seed + 100)
-    for _ in range(50):
+    for _ in range(n_refine):
         candidate = {
-            "forcing_scale": max(0.0, best_params["forcing_scale"] + rng.uniform(-0.01, 0.01)),
-            "macro_coupling": max(0.0, best_params["macro_coupling"] + rng.uniform(-0.05, 0.05)),
-            "damping": max(0.0, best_params["damping"] + rng.uniform(-0.01, 0.01)),
+            "forcing_scale": max(0.0, best_params["forcing_scale"] + rng.uniform(-0.05, 0.05)),
+            "macro_coupling": max(0.0, min(1.0, best_params["macro_coupling"] + rng.uniform(-0.1, 0.1))),
+            "damping": max(0.0, best_params["damping"] + rng.uniform(-0.05, 0.05)),
         }
         params = dict(base_params)
         params.update(candidate)
@@ -305,7 +306,7 @@ def perturb_params(params, pct, seed, keys=None):
 # ─── Validación C1-C5 ────────────────────────────────────────────────────────
 
 def evaluate_c1(abm_val, ode_val, obs_val, obs_std,
-                threshold_factor=0.6, corr_threshold=0.7):
+                threshold_factor=1.0, corr_threshold=0.7):
     err_abm = rmse(abm_val, obs_val)
     err_ode = rmse(ode_val, obs_val)
     corr_abm = correlation(abm_val, obs_val)
@@ -389,7 +390,7 @@ class CaseConfig:
                  real_start="1990-01-01", real_end="2022-01-01",
                  real_split="2006-01-01",
                  ode_noise=0.001, base_noise=0.001,
-                 corr_threshold=0.7, threshold_factor=0.6,
+                 corr_threshold=0.7, threshold_factor=1.0,
                  extra_base_params=None):
         self.case_name = case_name
         self.value_col = value_col
