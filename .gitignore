@@ -8,3 +8,6 @@ caso_epidemiologia/data/owid_covid.csv
 caso_*/data/*.csv
 04_caso_energia/data/opsd_time_series.csv
 06_caso_estetica/data/moma_artworks.csv
+
+# Ignore datasets
+*.csv
