@@ -57,9 +57,9 @@ def main():
         real_start="1960-01-01",
         real_end="2022-01-01",
         real_split="2005-01-01",
-        base_noise=0.0002,
+        base_noise=0.0001,
         corr_threshold=0.7,
-        extra_base_params={},
+        extra_base_params={"diffusion": 0.4},
     )
 
     results = run_full_validation(

@@ -264,11 +264,11 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
         param_grid = {
             "forcing_scale": [0.001, 0.003, 0.005, 0.008, 0.01, 0.015, 0.02, 0.03,
                               0.04, 0.06, 0.08, 0.12, 0.18, 0.25, 0.35, 0.45,
-                              0.55, 0.65, 0.8, 0.95, 1.1, 1.3, 1.5, 1.8, 2.0],
+                              0.55, 0.65, 0.8, 0.95, 1.1, 1.3, 1.5, 1.8, 2.0, 2.5],
             "macro_coupling": [0.1, 0.12, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.5,
                                0.6, 0.7, 0.8, 0.85, 0.9, 0.95, 1.0],
             "damping": [0.0, 0.002, 0.005, 0.01, 0.03, 0.06, 0.1, 0.15, 0.2,
-                        0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+                        0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
         }
 
     obs_arr = np.asarray(obs_train, dtype=np.float64)
@@ -318,9 +318,9 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
             # Reducir radio progresivamente
             decay = 1.0 / (1.0 + i * 0.005)
             candidate = {
-                "forcing_scale": max(0.001, min(1.5, center_p["forcing_scale"] + rng.uniform(-radius_fs, radius_fs) * decay)),
+                "forcing_scale": max(0.001, min(2.5, center_p["forcing_scale"] + rng.uniform(-radius_fs, radius_fs) * decay)),
                 "macro_coupling": max(0.1, min(1.0, center_p["macro_coupling"] + rng.uniform(-radius_mc, radius_mc) * decay)),
-                "damping": max(0.0, min(0.9, center_p["damping"] + rng.uniform(-radius_dmp, radius_dmp) * decay)),
+                "damping": max(0.0, min(0.95, center_p["damping"] + rng.uniform(-radius_dmp, radius_dmp) * decay)),
             }
             params = dict(base_params)
             params.update(candidate)
