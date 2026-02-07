@@ -55,7 +55,7 @@ def main():
         case_name="Energía (OPSD GB Grid)",
         value_col="value",
         series_key="e",
-        grid_size=10,
+        grid_size=20,
         persistence_window=12,
         synthetic_start="2000-01-01",
         synthetic_end="2019-12-01",

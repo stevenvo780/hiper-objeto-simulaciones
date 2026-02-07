@@ -52,7 +52,7 @@ def main():
         case_name="Contaminación PM2.5",
         value_col="pm25",
         series_key="p",
-        grid_size=10,
+        grid_size=20,
         persistence_window=5,
         synthetic_start="1980-01-01",
         synthetic_end="2019-01-01",

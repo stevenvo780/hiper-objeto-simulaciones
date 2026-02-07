@@ -224,18 +224,21 @@ def calibrate_ode(obs_train, forcing_train, regularization=0.01):
 
 
 def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
-                   param_grid=None, seed=2, n_refine=500):
+                   param_grid=None, seed=2, n_refine=2000):
     """
-    Grid search amplio + refinamiento local intensivo.
-    Default: 1680 combinaciones + 500 iteraciones de refinamiento.
+    Grid search masivo + refinamiento local ultra-intensivo.
+    Default: 3600+ combinaciones + 2000 iteraciones de refinamiento.
+    Diseñado para ejecución en torre de 32 cores.
     """
     if param_grid is None:
         param_grid = {
-            "forcing_scale": [0.005, 0.01, 0.02, 0.04, 0.08, 0.12, 0.18, 0.25,
-                              0.35, 0.45, 0.55, 0.65, 0.8, 1.0, 1.3],
-            "macro_coupling": [0.1, 0.15, 0.25, 0.4, 0.55, 0.7, 0.85, 0.95],
-            "damping": [0.0, 0.01, 0.03, 0.06, 0.1, 0.15, 0.25, 0.35,
-                        0.45, 0.55, 0.65, 0.75, 0.85, 0.9],
+            "forcing_scale": [0.001, 0.005, 0.01, 0.02, 0.04, 0.06, 0.08, 0.12,
+                              0.18, 0.25, 0.35, 0.45, 0.55, 0.65, 0.8, 0.95,
+                              1.1, 1.3, 1.5],
+            "macro_coupling": [0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
+                               0.8, 0.9, 0.95],
+            "damping": [0.0, 0.005, 0.01, 0.03, 0.06, 0.1, 0.15, 0.2,
+                        0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
         }
 
     candidates = []

@@ -55,7 +55,7 @@ def main():
         case_name="Falsación: Exogeneidad",
         value_col="value",
         series_key="incidence",
-        grid_size=10,
+        grid_size=20,
         persistence_window=6,
         synthetic_start="2020-01-01",
         synthetic_end="2024-01-01",

@@ -60,7 +60,7 @@ def main():
         synthetic_start="2012-01-01",
         synthetic_end="2024-12-01",
         synthetic_split="2018-01-01",
-        real_start="2012-01-01",
+        real_start="2007-01-01",
         real_end="2024-12-01",
         real_split="2018-01-01",
         corr_threshold=0.7,
