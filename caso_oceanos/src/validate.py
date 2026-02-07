@@ -1,7 +1,7 @@
 """
-validate.py — Océanos (Emisiones CO2 Global)
+validate.py — Consumo Energético Global (kg oil equivalent per capita)
 Validación híbrida ABM+ODE con protocolo C1-C5.
-Generado automáticamente por el framework de validación de hiperobjetos.
+Indicador World Bank: EG.USE.PCAP.KG.OE
 """
 
 import os
@@ -13,15 +13,15 @@ import pandas as pd
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "common"))
 
 from abm import simulate_abm
-from data import fetch_co2_emissions
+from data import fetch_energy_use
 from ode import simulate_ode
 from hybrid_validator import CaseConfig, run_full_validation, write_outputs
 
 
 def load_real_data(start_date, end_date):
 
-    cache_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "wb_co2_emissions.csv"))
-    df, _ = fetch_co2_emissions(cache_path, start_year=int(start_date[:4]), end_year=int(end_date[:4]))
+    cache_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "wb_energy_use.csv"))
+    df, _ = fetch_energy_use(cache_path, start_year=int(start_date[:4]), end_year=int(end_date[:4]))
     df["date"] = pd.to_datetime(df["date"])
     return df.dropna(subset=["date", "value"])
 
@@ -51,17 +51,17 @@ def make_synthetic(start_date, end_date, seed=101):
 
 def main():
     config = CaseConfig(
-        case_name="Océanos (Emisiones CO2 Global)",
+        case_name="Consumo Energético Global",
         value_col="value",
         series_key="e",
         grid_size=20,
         persistence_window=5,
-        synthetic_start="1960-01-01",
+        synthetic_start="1990-01-01",
         synthetic_end="2022-01-01",
-        synthetic_split="2000-01-01",
-        real_start="1960-01-01",
+        synthetic_split="2010-01-01",
+        real_start="1990-01-01",
         real_end="2022-01-01",
-        real_split="2000-01-01",
+        real_split="2010-01-01",
         corr_threshold=0.7,
         extra_base_params={},
     )

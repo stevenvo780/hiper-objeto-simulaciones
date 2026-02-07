@@ -6,7 +6,7 @@ import requests
 
 API_BASE = "https://api.worldbank.org/v2"
 DEFAULT_UA = "SimulacionClimatica/0.1"
-INDICATOR = "EN.ATM.CO2E.KT"
+INDICATOR = "EG.USE.PCAP.KG.OE"
 
 
 def _request(url, params=None, retries=3):
@@ -23,7 +23,7 @@ def _request(url, params=None, retries=3):
             _time.sleep(2 ** attempt)
 
 
-def fetch_co2_emissions(cache_path, country="WLD", start_year=1960, end_year=2022, refresh=False):
+def fetch_energy_use(cache_path, country="WLD", start_year=1960, end_year=2022, refresh=False):
     cache_path = os.path.abspath(cache_path)
     if os.path.exists(cache_path) and not refresh:
         df = pd.read_csv(cache_path)
@@ -47,8 +47,8 @@ def fetch_co2_emissions(cache_path, country="WLD", start_year=1960, end_year=202
             df["date"] = pd.to_datetime(df["date"])
             return df, {"source": "World Bank", "cached": True, "fallback": True}
         raise
-    if not isinstance(data, list) or len(data) < 2:
-        raise RuntimeError("Respuesta inesperada del API World Bank")
+    if not isinstance(data, list) or len(data) < 2 or data[1] is None:
+        raise RuntimeError("Respuesta inesperada del API World Bank (indicador archivado o sin datos)")
 
     entries = data[1]
     rows = []
@@ -70,7 +70,7 @@ def fetch_co2_emissions(cache_path, country="WLD", start_year=1960, end_year=202
 
     df = pd.DataFrame(rows).sort_values("year")
     if df.empty:
-        raise RuntimeError("No se encontraron datos de emisiones CO2 para el rango solicitado")
+        raise RuntimeError("No se encontraron datos de consumo energético para el rango solicitado")
 
     os.makedirs(os.path.dirname(cache_path), exist_ok=True)
     df.to_csv(cache_path, index=False)
