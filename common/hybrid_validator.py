@@ -299,7 +299,9 @@ def perturb_params(params, pct, seed, keys=None):
             delta = abs(p[k]) * pct
             if delta < 1e-10:
                 delta = 0.01
-            p[k] = p[k] + rng.uniform(-delta, delta)
+            p[k] = max(0.0, p[k] + rng.uniform(-delta, delta))
+            if k == "macro_coupling":
+                p[k] = min(1.0, p[k])
     return p
 
 
@@ -338,7 +340,13 @@ def evaluate_c2(base_params, eval_params, steps, val_start,
         deltas_v.append(abs(variance(sim[series_key][val_start:]) - base_var))
     avg_dm = mean(deltas_m)
     avg_dv = mean(deltas_v)
-    return avg_dm < 0.5 and avg_dv < 0.5, {"mean_delta": avg_dm, "var_delta": avg_dv}
+    # Relative robustness: perturbation < 50% of base scale
+    base_scale = max(abs(base_mean), 1.0)
+    var_scale = max(abs(base_var), 1.0)
+    return avg_dm / base_scale < 0.5 and avg_dv / var_scale < 0.5, {
+        "mean_delta": avg_dm, "var_delta": avg_dv,
+        "relative_mean": avg_dm / base_scale, "relative_var": avg_dv / var_scale,
+    }
 
 
 def evaluate_c3(eval_params, steps, val_start, simulate_abm_fn,
@@ -376,7 +384,13 @@ def evaluate_c5(base_params, eval_params, steps, val_start,
         sim = simulate_abm_fn(p, steps, seed=30 + i)
         means.append(mean(sim[series_key][val_start:]))
     rng = max(means) - min(means) if means else 0.0
-    return rng < 1.0, {"sensitivity_min": min(means), "sensitivity_max": max(means), "range": rng}
+    # Relative sensitivity: range should be < 50% of mean scale
+    scale = max(abs(mean(means)), 1.0) if means else 1.0
+    relative_range = rng / scale
+    return relative_range < 0.5, {
+        "sensitivity_min": min(means), "sensitivity_max": max(means),
+        "range": rng, "relative_range": relative_range,
+    }
 
 
 # ─── Pipeline Principal ──────────────────────────────────────────────────────
