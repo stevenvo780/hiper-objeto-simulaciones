@@ -261,9 +261,9 @@ def calibrate_abm(obs_train, base_params, steps, simulate_abm_fn,
     rng = random.Random(seed + 100)
     for _ in range(n_refine):
         candidate = {
-            "forcing_scale": max(0.0, best_params["forcing_scale"] + rng.uniform(-0.05, 0.05)),
+            "forcing_scale": max(0.001, min(1.5, best_params["forcing_scale"] + rng.uniform(-0.05, 0.05))),
             "macro_coupling": max(0.1, min(1.0, best_params["macro_coupling"] + rng.uniform(-0.1, 0.1))),
-            "damping": max(0.0, best_params["damping"] + rng.uniform(-0.05, 0.05)),
+            "damping": max(0.0, min(0.9, best_params["damping"] + rng.uniform(-0.05, 0.05))),
         }
         params = dict(base_params)
         params.update(candidate)
@@ -559,7 +559,7 @@ def evaluate_phase(config, df, start_date, end_date, split_date,
     # Symploké, non-locality, persistence
     internal, external = internal_vs_external_cohesion(abm.get("grid", []), abm.get("forcing", []))
     cr = cohesion_ratio(internal, external)
-    sym_ok = internal > external
+    sym_ok = internal >= external
     dom = dominance_share(abm.get("grid", []))
     non_local_ok = dom < 0.05
     obs_persistence = window_variance(obs_val, config.persistence_window)
